@@ -17,4 +17,4 @@ Install nodejs v18
 
 ## Test
 
-`npx tsx tests/index.ts`
+`npx tsx tests.ts`
