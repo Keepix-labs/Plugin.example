@@ -9,6 +9,10 @@ Install wasm-tools
 Install nodejs v18
 `nvm use v18`
 
+Github cli (https://github.com/cli/cli#installation)
+`brew install gh`
+`gh auth login`
+
 ## Install
 
 `npm install`
