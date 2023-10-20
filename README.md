@@ -40,3 +40,8 @@ Github cli (https://github.com/cli/cli#installation)
 ## Test
 
 `npx tsx tests.ts`  
+
+## Publish Release
+
+edit on the publish-create-new-release.sh the version.  
+`bash publish-create-new-release.sh`  
