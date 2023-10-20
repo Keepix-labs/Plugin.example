@@ -7,7 +7,6 @@
         "host": "NodeJS",
         "js-path": "./main.js"
       }
-    ],
-    "mainAssembly": "wasm.example.dll"
+    ]
   }
 }
