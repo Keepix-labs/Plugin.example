@@ -10,7 +10,7 @@ export const plugin = it('Plugin Test', async () => {
 
     console.log('Test Result:', await exports.Plugin.Run(JSON.stringify({
         key: "example",
-        url: "http://51.255.75.224:8545"
+        url: { url: "http://51.255.75.224:8545" }
     })));
 
     console.log('Test Result:', await exports.Plugin.Run(JSON.stringify({

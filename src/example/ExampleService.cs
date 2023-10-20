@@ -4,9 +4,9 @@ using Keepix.PluginSystem;
 public class ExampleService {
 
     [KeepixPluginFn("example")]
-    public static async Task<ExampleOutput> ExampleFunc(ExampleInput input) {
+    public static async Task<ExampleOutput> ExampleFunc(ExampleInput<Test> input) {
 
-        var web3 = new Web3(input.url);
+        var web3 = new Web3(input.url.url);
         Console.WriteLine("MSMSMSMS");
         var balance = await web3.Eth.GetBalance.SendRequestAsync("0x961a14bEaBd590229B1c68A21d7068c8233C8542");
         var etherAmount = Web3.Convert.FromWei(balance.Value);
