@@ -41,6 +41,10 @@ Github cli (https://github.com/cli/cli#installation)
 
 `npx tsx tests.ts`  
 
+## Run the Main Program (Just for testing some cases)
+
+`dotnet run`  
+
 ## Publish Release
 
 edit on the publish-create-new-release.sh the version.  
