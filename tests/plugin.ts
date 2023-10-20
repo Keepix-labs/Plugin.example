@@ -14,14 +14,18 @@ export const plugin = async () => {
         //         "string2"
         //     ]
         // })));
-        // console.log('Test Result:', await exports.Plugin.Run(JSON.stringify({
-        //     key: "example",
-        //     url: "http://51.255.75.224:8545"
-        // })));
-
-        console.log('Test Async:', await exports.Plugin.TestAsync(JSON.stringify({
+        console.log('Test Result:', await exports.Plugin.Run(JSON.stringify({
+            key: "example",
             url: "http://51.255.75.224:8545"
         })));
+
+        console.log('Test Result:', await exports.Plugin.Run(JSON.stringify({
+            key: "example2"
+        })));
+
+        // console.log('Test Async:', await exports.Plugin.TestAsync(JSON.stringify({
+        //     url: "http://51.255.75.224:8545"
+        // })));
         return true;
     } catch (error) {
         console.error('Erreur :', error);
