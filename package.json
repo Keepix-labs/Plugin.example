@@ -6,7 +6,11 @@
   "private": true,
   "license": "MIT",
   "scripts": {
-    "test": "npx tsx tests.ts"
+    "test": "npx tsx tests.ts",
+    "start": "dotnet run",
+    "dev": "bash publish-debug.sh",
+    "build": "bash publish-release.sh",
+    "publish": "bash publish-create-new-release.sh"
   },
   "dependencies": {
     "typescript": "^5.2.2"
