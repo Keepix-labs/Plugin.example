@@ -49,5 +49,4 @@ Github cli (https://github.com/cli/cli#installation)
 
 ## Publish Release
 
-edit on the publish-create-new-release.sh the version.  
-`bash publish-create-new-release.sh`  
+`bash publish-create-new-release.sh v0.0.1`  
