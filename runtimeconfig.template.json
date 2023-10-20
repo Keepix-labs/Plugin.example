@@ -1,0 +1,13 @@
+{
+  "wasmHostProperties": {
+    "runtimeArgs": [],
+    "perHostConfig": [
+      {
+        "name": "NodeJS",
+        "host": "NodeJS",
+        "js-path": "./main.js"
+      }
+    ],
+    "mainAssembly": "wasm.example.dll"
+  }
+}

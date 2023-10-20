@@ -1,8 +1,9 @@
 using Nethereum.Web3;
+using Keepix.PluginSystem;
 
-public static class ExampleService {
+public class ExampleService {
 
-    [PluginFn("example")]
+    [KeepixPluginFn("example")]
     public static async Task<ExampleOutput> ExampleFunc(ExampleInput input) {
 
         var web3 = new Web3(input.url);
@@ -13,7 +14,7 @@ public static class ExampleService {
         return new ExampleOutput { result = etherAmount.ToString() };
     }
 
-    [PluginFn("example2")]
+    [KeepixPluginFn("example2")]
     public static async Task<string> ExampleFunc2() {
 
         var web3 = new Web3("http://51.255.75.224:8545");
