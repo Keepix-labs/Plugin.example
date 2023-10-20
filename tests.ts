@@ -4,12 +4,14 @@ import * as tests from './tests/index';
 
     let i = 1;
     for (let key of Object.keys(tests)) {
-        const testResult = await tests[key]();
+        const test = tests[key];
+        console.log(`\n(${test.name}) ->`);
+        const testResult = await test.test();
 
-        if (testResult) {
-            console.log(`(${i}:${key}) Test Success.`);
+        if (testResult.result) {
+            console.log(`(${test.name}) Test Success.`);
         } else {
-            console.log(`(${i}:${key}) Test Failed.`);
+            console.log(`(${test.name}) Test Failed. ${testResult.message}`);
         }
         i++;
     }

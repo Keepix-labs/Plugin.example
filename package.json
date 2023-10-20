@@ -5,7 +5,9 @@
   "author": "",
   "private": true,
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "test": "npx tsx tests.ts"
+  },
   "dependencies": {
     "typescript": "^5.2.2"
   },

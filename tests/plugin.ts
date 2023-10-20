@@ -1,34 +1,25 @@
-import { wasm } from '../bin/Debug/net7.0/browser-wasm/AppBundle/wasm';
+import { wasm } from '../dist/wasm';
+import { assert, it } from './utils/utils';
 
 /**
  * Test
  * @returns boolean success
  */
-export const plugin = async () => {
-    try {
-        const exports = await wasm();
+export const plugin = it('Plugin Test', async () => {
+    const exports = await wasm();
 
-        // console.log('Sync  Result:', exports.Plugin.TestSync(JSON.stringify({
-        //     data: [
-        //         "string1",
-        //         "string2"
-        //     ]
-        // })));
-        console.log('Test Result:', await exports.Plugin.Run(JSON.stringify({
-            key: "example",
-            url: "http://51.255.75.224:8545"
-        })));
+    console.log('Test Result:', await exports.Plugin.Run(JSON.stringify({
+        key: "example",
+        url: "http://51.255.75.224:8545"
+    })));
 
-        console.log('Test Result:', await exports.Plugin.Run(JSON.stringify({
-            key: "example2"
-        })));
+    console.log('Test Result:', await exports.Plugin.Run(JSON.stringify({
+        key: "example2"
+    })));
 
-        // console.log('Test Async:', await exports.Plugin.TestAsync(JSON.stringify({
-        //     url: "http://51.255.75.224:8545"
-        // })));
-        return true;
-    } catch (error) {
-        console.error('Erreur :', error);
-    }
-    return false;
-};
+    console.log('Test Result:', await exports.Plugin.Run(JSON.stringify({
+        
+    })));
+    
+    return assert(true);
+});

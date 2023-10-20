@@ -5,6 +5,11 @@ public partial class Plugin {
     
     [JSExport]
     public static async Task<string> Run(string jsonString) {
-        return await KeepixPlugin.Run(jsonString, Assembly.GetExecutingAssembly().GetTypes());
+        try {
+            return await KeepixPlugin.Run(jsonString, Assembly.GetExecutingAssembly().GetTypes());
+        } catch(Exception e) {
+            Console.WriteLine(e.Message);
+            return "null"; // return undefined object
+        }
     }
 }
