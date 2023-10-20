@@ -25,6 +25,8 @@ Install wasm-tools
 `dotnet workload install wasm-tools`  
 
 Install nodejs v18  
+`curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash`  
+`nvm install v18`  
 `nvm use v18`  
 
 Github cli (https://github.com/cli/cli#installation)  
