@@ -6,20 +6,23 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <RuntimeIdentifier>browser-wasm</RuntimeIdentifier>
-    <WasmMainJSPath>src/wasm.js</WasmMainJSPath>
+    <WasmMainJSPath>js/wasm.js</WasmMainJSPath>
     <!-- JSExport requires unsafe code -->
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
 
     <!-- Reduce output size -->
     <InvariantGlobalization>true</InvariantGlobalization>
     <WasmEmitSymbolMap>true</WasmEmitSymbolMap>
+
+    <SelfContained>true</SelfContained>
   </PropertyGroup>
 
   <!-- Copy extra files when publishing the app -->
   <ItemGroup>
-    <!-- <WasmExtraFilesToDeploy Include="index.html" /> -->
+    <WasmExtraFilesToDeploy Include="./js/main.js" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Keepix.PluginSystem" Version="1.0.0" />
     <PackageReference Include="Nethereum.Web3" Version="4.14.0" />
   </ItemGroup>
 </Project>
