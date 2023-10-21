@@ -2,6 +2,8 @@ import * as tests from './tests/index';
 
 (async () => {
 
+    console.log(`Starting Tests - CurrentPlatform (${process.platform.replace("darwin", "osx")}-${process.arch})`);
+
     let i = 1;
     for (let key of Object.keys(tests)) {
         const test = tests[key];

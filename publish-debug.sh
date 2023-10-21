@@ -1,3 +1,3 @@
-dotnet publish -c Debug -r browser-wasm --self-contained
+dotnet publish -c Debug
 rm -rf ./dist
-cp -r ./bin/Debug/net7.0/browser-wasm/AppBundle ./dist
+cp -r ./bin/Debug/net7.0 ./dist

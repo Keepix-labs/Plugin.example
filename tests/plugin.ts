@@ -1,25 +1,62 @@
-import { wasm } from '../dist/wasm';
 import { assert, it } from './utils/utils';
 
 /**
  * Test
  * @returns boolean success
  */
-export const plugin = it('Plugin Test', async () => {
-    const exports = await wasm();
+export const plugin = it('Plugin Test', async (exec) => {
+    // console.log(process.env);
+    // const exports = await wasm(false, process.env);
 
-    console.log('Test Result:', await exports.Plugin.Run(JSON.stringify({
-        key: "example",
-        url: { url: "http://51.255.75.224:8545" }
-    })));
+    const resultPlugin = JSON.parse(JSON.parse(await exec(JSON.stringify({
+        key: "plugin"
+    }))).jsonResult);
 
-    console.log('Test Result:', await exports.Plugin.Run(JSON.stringify({
-        key: "example2"
-    })));
+    console.log('plugin', resultPlugin);
 
-    console.log('Test Result:', await exports.Plugin.Run(JSON.stringify({
-        
-    })));
+    const resultPreInstall = JSON.parse(JSON.parse(await exec(JSON.stringify({
+        key: "pre-install",
+        walletSecretKey: "abcd",
+        walletAddress: "0x961a14bEaBd590229B1c68A21d7068c8233C8542"
+    }))).jsonResult);
+
+    console.log('pre-install', resultPreInstall);
+
+    const resultInstall = JSON.parse(JSON.parse(await exec(JSON.stringify({
+        key: "install"
+    }))).jsonResult);
+
+    console.log('install', resultInstall);
+
+    const resultStart = JSON.parse(JSON.parse(await exec(JSON.stringify({
+        key: "start"
+    }))).jsonResult);
+
+    console.log('start', resultStart);
+
+    const resultStop = JSON.parse(JSON.parse(await exec(JSON.stringify({
+        key: "stop"
+    }))).jsonResult);
+
+    console.log('stop', resultStop);
+
+    const resultUninstall = JSON.parse(JSON.parse(await exec(JSON.stringify({
+        key: "uninstall"
+    }))).jsonResult);
+
+    console.log('uninstall', resultUninstall);
+
+    const resultStatus = JSON.parse(JSON.parse(await exec(JSON.stringify({
+        key: "status"
+    }))).jsonResult);
+
+    console.log('status', resultStatus);
+
+    const resultPluginInformation = JSON.parse(JSON.parse(await exec(JSON.stringify({
+        key: "plugin-information"
+    }))).jsonResult);
+
+    console.log('plugin-information', resultPluginInformation);
     
     return assert(true);
 });
