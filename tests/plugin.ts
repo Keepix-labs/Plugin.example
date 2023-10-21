@@ -5,9 +5,6 @@ import { assert, it } from './utils/utils';
  * @returns boolean success
  */
 export const plugin = it('Plugin Test', async (exec) => {
-    // console.log(process.env);
-    // const exports = await wasm(false, process.env);
-
     const resultPlugin = JSON.parse(JSON.parse(await exec(JSON.stringify({
         key: "plugin"
     }))).jsonResult);

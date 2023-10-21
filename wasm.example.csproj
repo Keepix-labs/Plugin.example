@@ -5,8 +5,7 @@
     <TargetFramework>net7.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <!-- <RuntimeIdentifier>browser-wasm</RuntimeIdentifier> -->
-    <!-- <WasmMainJSPath>js/wasm.js</WasmMainJSPath> -->
+    
     <!-- JSExport requires unsafe code -->
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
 
@@ -17,12 +16,8 @@
     <SelfContained>true</SelfContained>
   </PropertyGroup>
 
-  <!-- Copy extra files when publishing the app -->
   <ItemGroup>
-    <WasmExtraFilesToDeploy Include="./js/main.js" />
-  </ItemGroup>
-  <ItemGroup>
-    <PackageReference Include="Keepix.PluginSystem" Version="1.0.0" />
+    <PackageReference Include="Keepix.PluginSystem" Version="1.0.4" />
     <PackageReference Include="Nethereum.Web3" Version="4.14.0" />
   </ItemGroup>
 </Project>
