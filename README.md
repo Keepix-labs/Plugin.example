@@ -20,10 +20,6 @@ see your installed versions: `dotnet --list-sdks`
 - Windows:  
 Install it via "Visual Studio" and if necessary change the version 7.? on globals.json  
 
-
-Install wasm-tools  
-`dotnet workload install wasm-tools`  
-
 Install nodejs v18  
 `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash`  
 `nvm install v18`  
@@ -43,10 +39,6 @@ Github cli (https://github.com/cli/cli#installation)
 
 `npx tsx tests.ts`  
 
-## Run the Main Program (Just for testing some cases)
-
-`dotnet run`  
-
 ## Publish Release
 
-`bash publish-create-new-release.sh v0.0.1`  
+`bash publish-create-new-release.sh v0.0.4`  
