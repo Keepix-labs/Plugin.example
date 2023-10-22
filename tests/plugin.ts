@@ -20,7 +20,9 @@ export const plugin = it('Plugin Test', async (exec) => {
     console.log('pre-install', resultPreInstall);
 
     const resultInstall = JSON.parse(JSON.parse(await exec(JSON.stringify({
-        key: "install"
+        key: "install",
+        walletSecretKey: "abcd",
+        walletAddress: "0x961a14bEaBd590229B1c68A21d7068c8233C8542"
     }))).jsonResult);
 
     console.log('install', resultInstall);
@@ -37,12 +39,6 @@ export const plugin = it('Plugin Test', async (exec) => {
 
     console.log('stop', resultStop);
 
-    const resultUninstall = JSON.parse(JSON.parse(await exec(JSON.stringify({
-        key: "uninstall"
-    }))).jsonResult);
-
-    console.log('uninstall', resultUninstall);
-
     const resultStatus = JSON.parse(JSON.parse(await exec(JSON.stringify({
         key: "status"
     }))).jsonResult);
@@ -54,6 +50,13 @@ export const plugin = it('Plugin Test', async (exec) => {
     }))).jsonResult);
 
     console.log('plugin-information', resultPluginInformation);
+
+
+    const resultUninstall = JSON.parse(JSON.parse(await exec(JSON.stringify({
+        key: "uninstall"
+    }))).jsonResult);
+
+    console.log('uninstall', resultUninstall);
     
     return assert(true);
 });
